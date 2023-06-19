@@ -3,7 +3,7 @@
            <div class="row">
                <div class="col-lg-12">
                            <table class="table1">
-                               <tr class="tr1">
+                                <tr class="tr1">
                                    <th>USERNAME</th>
                                    <th>PASSWORD</th>
                                    <th>เบอร์โทรศัพท์</th>
@@ -12,7 +12,7 @@
                                    <th>ที่อยู่</th>
                                    <th>เพิ่มเติม</th>
                                </tr>
-                               <tr> <!--- ทดสอบ เนื่องจากดึงข้อมูลใน store ไม่ได้ -->
+                               <tr> 
                                     <td>peach_krub</td>
                                     <td>Aa112233</td>
                                     <td>0638860829</td>
@@ -23,8 +23,41 @@
                                     <button @click="editUser" class="btnE">เพิ่มเติม</button>
                                     <button @click="deleteUser" class="btnD">ลบ</button>
                                     </td>
+                                </tr>  
+                               <tr> 
+                                    <td>peach_too</td>
+                                    <td>123456Aa</td>
+                                    <td>0678901234</td>
+                                    <td>ทดสอบ แสดงผล</td>
+                                    <td>04-01-40</td>
+                                    <td>maximumsoft</td>
+                                    <td>
+                                    <button @click="editUser" class="btnE">เพิ่มเติม</button>
+                                    <button @click="deleteUser" class="btnD">ลบ</button>
+                                    </td>
                                 </tr>
-                     <!---         <tr>
+                                <tr> 
+                                    <td>Anun</td>
+                                    <td>0000AaAa</td>
+                                    <td>0987654321</td>
+                                    <td>ทดสอบ ทดสอบ</td>
+                                    <td>14-12-41</td>
+                                    <td>maximumsoft</td>
+                                    <td>
+                                    <button @click="editUser" class="btnE">เพิ่มเติม</button>
+                                    <button @click="deleteUser" class="btnD">ลบ</button>
+                                    </td>
+                                </tr> <!--
+                                  <tr class="tr1">
+                                   <th>USERNAME</th>
+                                   <th>PASSWORD</th>
+                                   <th>เบอร์โทรศัพท์</th>
+                                   <th>ชื่อ-นามสกุล</th>
+                                   <th>วันเกิด</th>
+                                   <th>ที่อยู่</th>
+                                   <th>เพิ่มเติม</th>
+                               </tr>
+                                <tr>
                                    <td>{{ user.username }}</td>
                                    <td>{{ user.password }}</td>
                                    <td>{{ user.phoneNumber }}</td>
@@ -34,7 +67,7 @@
                                        <button @click="editUser" class="btnE">เพิ่มเติม</button>
                                        <button @click="deleteUser" class="btnD">ลบ</button>
                                    </td>
-                               </tr> ไม่แน่ใจว่าผิดตรงไหน เรียกใช้ store vuex ไม่สำเร็จ --> 
+                               </tr>  --> 
                            </table>
                </div>
            </div>

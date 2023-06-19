@@ -2,28 +2,28 @@
   <form @submit.prevent="handleSubmit">
     <div class="form-group">
       <label>ชื่อ - นามสกุล *</label><br>
-      <input v-model="name" type="text" class="form-control" placeholder="Enter your name" />
+      <input v-model="formData.name" required type="text" class="form-control" placeholder="Enter your name" />
     </div>
     <div class="form-group">
       <label>เบอร์โทรศัพท์ *</label><br>
-      <input v-model="phoneNumber" type="tel" id="phone" name="phone" class="form-control"  placeholder="Enter your phone number" pattern="[0-9]{10}" />
+      <input v-model="formData.phoneNumber" required type="tel" id="phone" name="phone" class="form-control"  placeholder="Enter your phone number" pattern="[0-9]{10}" />
     </div>
     <div class="form-group">
       <label>Username *</label><br>
-      <input v-model="username" type="text" class="form-control" placeholder="Enter Username" name="username" />
+      <input v-model="formData.username" required type="text" class="form-control" placeholder="Enter Username" name="username" />
     </div>
   <div class="form-group">
     <label>Password *</label><br>
-    <input v-model="password" type="password" class="form-control" placeholder="Enter Password" name="psw" />
+    <input v-model="formData.password" required type="password" class="form-control" placeholder="Enter Password" name="psw" />
   </div>
   <div class="form-group">
     <label>วัน/เดือน/ปีเกิด</label><br>
-    <input v-model="birthday" type="date" class="form-control" />
+    <input v-model="formData.birthday" required type="date" class="form-control" />
   </div>
   <div class="form-group">
     <label>ที่อยู่</label><br>
     <textarea
-      v-model="address"
+      v-model="formData.address" required
       type="text"
       class="form-control"
       placeholder="Enter your address"
@@ -39,7 +39,18 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useStore } from 'vuex';
+import { Store } from 'vuex'
+declare module '@vue/runtime-core' {
+  // declare your own store states
+  interface State {
+    count: number
+  }
+
+  // provide typings for `this.$store`
+  interface ComponentCustomProperties {
+    $store: Store<State>
+  }
+}
 import Swal from 'sweetalert2';
 
 export default defineComponent({
